@@ -1,14 +1,137 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Demo UtzCorpo
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+	<ion-grid>
+		<ion-row>
+			<ion-col col-8 col-md-4>
+	<ion-card>
+	
+	  <ion-card-header>
+	    Control De Luz
+	  </ion-card-header>
+	
+	  <ion-card-content >
+	  	<div style="text-align: center">
+	    	<button ion-button round color="secondary" (click)="encender()">Encender Luces</button>
+
+		</div>
+			  	<div style="text-align: center">
+	    	<button ion-button round color="dark" (click)="apagar()">Apagar Luces</button>
+
+		</div>
+			  	<div style="text-align: center">
+	    
+	    	<button ion-button round color="primary" (click)="autoOn()">Automaticas</button>
+
+		</div>
+			  	<div style="text-align: center">
+
+	    	<button ion-button round color="light" (click)="autoOff()">Manuales</button>
+		</div>
+	  </ion-card-content>
+	
+	</ion-card>
+</ion-col>
+	<ion-col col-12 col-md-8>
+		<ion-card>	
+		  <ion-card-header>Tv</ion-card-header>	
+		  <ion-card-content >
+		    	<button ion-button round color="primary" class="numeros" (click)="cambiar('1')">1</button>
+		    	<button ion-button round color="primary" class="numeros" (click)="cambiar('2')">2</button>
+		    	<button ion-button round color="primary" class="numeros" (click)="cambiar('3')">3</button>
+		    	<button ion-button round color="primary" class="numeros" (click)="cambiar('4')">4</button>
+		    	<button ion-button round color="primary" class="numeros" (click)="cambiar('5')">5</button>
+		    	<button ion-button round color="primary" class="numeros" (click)="cambiar('6')">6</button>
+		    	<button ion-button round color="primary" class="numeros" (click)="cambiar('7')">7</button>
+		    	<button ion-button round color="primary" class="numeros" (click)="cambiar('8')">8</button>
+		    	<button ion-button round color="primary" class="numeros" (click)="cambiar('9')">9</button>
+		    	<button ion-button round color="primary" class="numeros" (click)="cambiar('0')">0</button>
+		    	<button ion-button round color="secondary" class="numeros" (click)="cambiar('SUBIR VOLUMEN')"> <ion-icon ios="ios-add" md="md-add"></ion-icon></button>
+		    	<button ion-button round color="secondary" class="numeros" (click)="cambiar('BAJAR VOLUMEN')">  <ion-icon ios="ios-remove" md="md-remove"></ion-icon></button>
+		    	<button ion-button round color="danger" class="numeros" (click)="cambiar('MUTE')"><ion-icon ios="ios-volume-mute" md="md-volume-mute"></ion-icon></button>
+		    	<button ion-button round color="light" class="numeros" (click)="cambiar('BAJAR CANAL')"><ion-icon ios="ios-arrow-dropleft" md="md-arrow-dropleft"></ion-icon></button>
+		    	<button ion-button round color="light" class="numeros" (click)="cambiar('SUBIR CANAL')"><ion-icon ios="ios-arrow-dropright" md="md-arrow-dropright"></ion-icon></button>
+		    	<button ion-button round color="danger" class="numeros" (click)="cambiar('ENCENDER')">On/Off</button>
+
+		  </ion-card-content>	
+		</ion-card>
+	</ion-col>
+	<ion-col col-12 >
+		<ion-card>	
+		  <ion-card-header>Ambientador</ion-card-header>	
+		  <ion-card-content >
+ 			    	<button ion-button round color="secondary" class="numeros" (click)="ambientador('ENCENDIENDO')">Encender</button>
+		    		<button ion-button round color="danger" class="numeros" (click)="ambientador('APAGANDO')">Apagar</button>
+
+	  		    <ion-card>
+	  		    
+	  		      <ion-card-header>
+	  		        Modo
+	  		      </ion-card-header>
+	  		    
+	  		      <ion-card-content>
+	  		        <!-- Add card content here! -->
+		    	<button ion-button round color="primary" class="numeros" (click)="ambientador('MODO AUTOMATICO')">AUTOMATICO</button>
+		    	<button ion-button round color="primary" class="numeros" (click)="ambientador('MODO SECO')">SECO</button>
+		    	<button ion-button round color="primary" class="numeros" (click)="ambientador('MODO CALEFACTOR')">CALEFACTOR</button>
+		    	<button ion-button round color="primary" class="numeros" (click)="ambientador('MODO FRIO')">FRIO</button>
+		    	<button ion-button round color="primary" class="numeros" (click)="ambientador('MODO VENTILADOR')">VENTILADOR</button>
+	  		      </ion-card-content>
+	  		    
+	  		    </ion-card>
+	  		    <ion-card>
+	  		    
+	  		      <ion-card-header>
+	  		        Nivel De Ventilador
+	  		      </ion-card-header>
+	  		    
+	  		      <ion-card-content>
+	  		        <!-- Add card content here! -->
+		    	<button ion-button round color="light" class="numeros" (click)="ambientador('VENTILADOR AUTOMATICO')">AUTOMATICO</button>
+		    	<button ion-button round color="light" class="numeros" (click)="ambientador('VENTILADOR NIVEL 1')">Nivel 1</button>
+		    	<button ion-button round color="light" class="numeros" (click)="ambientador('VENTILADOR NIVEL 2')">Nivel 2</button>
+		    	<button ion-button round color="light" class="numeros" (click)="ambientador('VENTILADOR NIVEL 3')">Nivel 3</button>
+	  		      </ion-card-content>
+	  		    
+	  		    </ion-card>
+	  		    <ion-card>
+	  		    
+	  		      <ion-card-header>
+	  		        Temperatura: {{temp}}
+	  		      </ion-card-header>
+	  		    
+	  		      <ion-card-content>
+	  		        <!-- Add card content here! -->
+		    	  <ion-item>
+				    <ion-range (ionChange)="modificarTemp()" debounce="800"  min="17" max="30" [(ngModel)]="temp" color="secondary">
+				      <ion-label range-left>17</ion-label>
+				      <ion-label range-right>30</ion-label>
+				    </ion-range>
+				  </ion-item>
+	  		      </ion-card-content>
+	  		    
+	  		    </ion-card>
+		  </ion-card-content>	
+		</ion-card>
+	</ion-col>
+	<ion-card>
+	
+	  <ion-card-header>
+	    Test Control
+	  </ion-card-header>
+	
+	  <ion-card-content>
+	   <ion-input type="text" [(ngModel)]="keyControl" ></ion-input>
+	   <button ion-button (click)=sendKey() >enviar</button>
+	  </ion-card-content>
+	
+	</ion-card>
+</ion-row>
+</ion-grid>
 </ion-content>
